@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+      # add path to music database
+      # - /some/path/to/music:/app/data/music
+    environment:
+      - DB_PATH=/app/data/database.sqlite
+      - MUSIC_PATH=/app/data/music
